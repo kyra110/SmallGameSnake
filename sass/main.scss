@@ -1,0 +1,118 @@
+//resets
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+//varibles couleur
+$headerBg: #05d4f4;
+$footerBg: #05d4f4;
+$canvasBg: #05d4f4;
+$bodyBg: #343b66;
+$buttonBg: #05d4f4;
+$fontTitle: black;
+$buttonText: #ff0052;
+//Variables couleur Bordures
+$border1: black;
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-image: url(../images/fonpourSnakeGame.png);
+  background-size: cover;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $fontTitle;
+  height: 80px;
+  background-color: $headerBg;
+}
+.play {
+  display: flex;
+  gap: 20px;
+}
+.container-Game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  .info-score {
+    display: flex;
+    background-color: $canvasBg;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: 2px solid $border1;
+    width: 100%;
+    p {
+      color: $fontTitle;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+  }
+}
+canvas {
+  border: 2px solid $border1;
+  display: block;
+  margin: 0 auto;
+  background-color: $canvasBg;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+//composant button
+button {
+  padding: 10px 20px;
+  border-radius: 40px 40px 100px 100px;
+  background-color: $buttonBg;
+  color: $buttonText;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: transform 0.4s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.loose-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.774);
+  .loose {
+    width: 30%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 10px;
+    h3,
+    p {
+      color: #ff0052;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $fontTitle;
+  height: 80px;
+  background-color: $footerBg;
+}

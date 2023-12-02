@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="snake.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Snake Game</h1>
+  </header>
+  <audio id="myAudio">
+    <source src="mp3/musiqueFondSnakeGame.mp3" type="audio/mp3">
+    Lecture
+  </audio>
+  <div class="play">
+    <button id="play">Lecture</button>
+    <button id="pause">Pause</button>
+  </div>
+  <div class="container-Game">
+    <div class="info-score">
+      <p id="timerGlobal">Time:</p>
+      <P id="scoreGlobal">Score:</P>
+    </div>
+    <canvas id="gameCanvas" width="400" height="400">
+    </canvas>
+  </div>
+  <button id="startButton">Start Game</button>
+  <div class="loose-container">
+    <div class="loose">
+      <h3>You Loose!!</h3>
+      <p id="scoreLoose">Score:</p>
+      <p id="timerLoose"></p>
+    </div>
+  </div>
+  <footer>
+    <h2>By Kyra Coding</h2>
+  </footer>
+</body>
+
+</html>
