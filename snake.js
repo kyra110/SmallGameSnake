@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
   startButton.addEventListener("click", () => {
     if (!gameRunning) {
       generateNewApple();
-      gameInterval = setInterval(gameLoop, 100);
+      gameInterval = setInterval(gameLoop, 250);
       gameRunning = true;
       setInterval(creatTimer, 1000);
       audioGo.play();
