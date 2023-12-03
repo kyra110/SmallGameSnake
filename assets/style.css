@@ -92,7 +92,7 @@ button:hover {
   background-color: rgba(128, 128, 128, 0.774);
 }
 .loose-container .loose {
-  width: 30%;
+  width: 50%;
   height: 100px;
   background-color: black;
   display: flex;
