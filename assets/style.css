@@ -76,7 +76,7 @@ button:hover {
 }
 
 .mobilPad {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -118,6 +118,12 @@ footer {
   color: black;
   height: 80px;
   background-color: #05d4f4;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobilPad {
+    display: flex;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
