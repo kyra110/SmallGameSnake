@@ -88,6 +88,12 @@ button {
 #right,
 #left {
   color: $fontTitle;
+  transition: transform 0.1s;
+  &:hover {
+    background-color: $fontTitle;
+    color: $buttonText;
+    transform: scale(1);
+  }
 }
 #startButton {
   border: 3px $buttonText solid;

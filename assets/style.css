@@ -83,6 +83,15 @@ button:hover {
 #right,
 #left {
   color: black;
+  transition: transform 0.1s;
+}
+#up:hover,
+#down:hover,
+#right:hover,
+#left:hover {
+  background-color: black;
+  color: #ff0052;
+  transform: scale(1);
 }
 
 #startButton {
