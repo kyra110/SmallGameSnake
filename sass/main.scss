@@ -41,7 +41,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
+  width: 300px;
   .info-score {
     display: flex;
     background-color: $canvasBg;
@@ -80,6 +80,14 @@ button {
     transform: scale(1.2);
   }
 }
+//Boutons pour le mode mobile
+.mobilPad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+//Modal si perdu
 .loose-container {
   display: none;
   justify-content: center;

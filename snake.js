@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       score++;
       scoreGlobal.textContent = textScore + score.toString();
       scoreLoose.textContent = textScore + score.toString();
+      audioMiam.play();
     } else {
       snake.pop();
     }
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkCollision()) {
       clearInterval(gameInterval);
       gameRunning = false;
+      audioLoose.play();
       looseModal.style.display = "flex";
       setTimeout(() => {
         looseModal.style.display = "none";
@@ -92,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     drawApple();
     updateSnake();
   }
-
+  // Fonction pour gérer le deplacement du serpent sur clavier
   document.addEventListener("keydown", (e) => {
     if (!gameRunning) return;
     const keyPressed = e.key;
@@ -111,35 +113,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Fonction pour gérer les déplacement sur mobile
+  up.addEventListener("click", () => {
+    if (!gameRunning) return;
+    if (dy !== gridSize) {
+      dx = 0;
+      dy = -gridSize;
+    }
+  });
+
+  left.addEventListener("click", () => {
+    if (!gameRunning) return;
+    if (dx !== gridSize) {
+      dx = -gridSize;
+      dy = 0;
+    }
+  });
+
+  right.addEventListener("click", () => {
+    if (!gameRunning) return;
+    if (dx !== -gridSize) {
+      dx = gridSize;
+      dy = 0;
+    }
+  });
+
+  down.addEventListener("click", () => {
+    if (!gameRunning) return;
+    if (dy !== -gridSize) {
+      dx = 0;
+      dy = gridSize;
+    }
+  });
+  //Fin de la Fonction qui gère le déplacement sur mobile
+
   const startButton = document.getElementById("startButton");
   startButton.addEventListener("click", () => {
     if (!gameRunning) {
+      generateNewApple();
       gameInterval = setInterval(gameLoop, 100);
       gameRunning = true;
       setInterval(creatTimer, 1000);
+      audioGo.play();
     }
   });
 });
 //variables pour la gestion de l'audio
-const myAudio = document.getElementById("myAudio");
 const playButton = document.getElementById("play");
 const pauseButton = document.getElementById("pause");
 function PlayPause() {
   playButton.addEventListener("click", () => {
-    myAudio.play();
+    audioBg.play();
   });
   pauseButton.addEventListener("click", () => {
-    myAudio.pause();
+    audioBg.pause();
   });
 }
 PlayPause();
-// function qui Timer
 //Variables Timer
 const timerLoose = document.getElementById("timerLoose");
 const timerGlobal = document.getElementById("timerGlobal");
 const time = "Time: ";
 let seconds = 0;
 let minutes = 0;
+
+// function qui Timer
 function creatTimer() {
   seconds++;
   if (seconds === 60) {
@@ -150,3 +188,16 @@ function creatTimer() {
   timerLoose.textContent = time + minutes + ":" + displaySeconds;
   timerGlobal.textContent = time + minutes + ":" + displaySeconds;
 }
+//fonction pour gerer les buttons sur Mobile
+up.addEventListener("click", () => {
+  console.log("up");
+});
+left.addEventListener("click", () => {
+  console.log("left");
+});
+right.addEventListener("click", () => {
+  console.log("right");
+});
+down.addEventListener("click", () => {
+  console.log("down");
+});

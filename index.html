@@ -13,12 +13,21 @@
   <header>
     <h1>Snake Game</h1>
   </header>
-  <audio id="myAudio">
+  <audio id="audioBg">
     <source src="mp3/musiqueFondSnakeGame.mp3" type="audio/mp3">
-    Lecture
+    <source src="mp3/musiqueStartSnake.mp3" type="audio/mp3">
+  </audio>
+  <audio id="audioGo">
+    <source src="mp3/go.mp3" type="audio/mp3">
+  </audio>
+  <audio id="audioMiam">
+    <source src="mp3/miam2.mp3" type="audio/mp3">
+  </audio>
+  <audio id="audioLoose">
+    <source src="mp3/loose2.mp3" type="audio/mp3">
   </audio>
   <div class="play">
-    <button id="play">Lecture</button>
+    <button id="play">Play</button>
     <button id="pause">Pause</button>
   </div>
   <div class="container-Game">
@@ -26,8 +35,16 @@
       <p id="timerGlobal">Time:</p>
       <P id="scoreGlobal">Score:</P>
     </div>
-    <canvas id="gameCanvas" width="400" height="400">
+    <canvas id="gameCanvas" width="300" height="300">
     </canvas>
+  </div>
+  <div class="mobilPad">
+    <button id="up">Up</button>
+    <div class="div">
+      <button id="left">Left</button>
+      <button id="down">Dowwn</button>
+      <button id="right">Right</button>
+    </div>
   </div>
   <button id="startButton">Start Game</button>
   <div class="loose-container">
